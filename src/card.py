@@ -36,8 +36,9 @@ def create_card_from_issue(list_id, google_sheet_name):
     gcp_credential = json.loads(os.environ.get('GCP_CREDENTIAL'))
     google_sheet = gspread.service_account_from_dict(gcp_credential)
     spreadsheet = google_sheet.open(google_sheet_name)
-    worksheet = spreadsheet.worksheet('issue-tracker')
-    if worksheet is None:
+    try:
+        worksheet = spreadsheet.worksheet('issue-tracker')
+    except gspread.WorksheetNotFound:
         worksheet = spreadsheet.add_worksheet('issue-tracker')
     df = pd.DataFrame(worksheet.get_all_records(), columns=columns)
     df.append([issue['id'], issue['num'], issue['user']['id'],
