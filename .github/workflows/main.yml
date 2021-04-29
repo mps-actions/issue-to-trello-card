@@ -11,4 +11,4 @@ jobs:
       id: hello
       uses: mps-actions/issue-to-trello-card@main
       with:
-        SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
+        sample-secret: ${{ secrets.SAMPLE_SECRET }}
