@@ -23,8 +23,8 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
 @click.option('--list-id')
 @click.option('--google-sheet-name')
 def create_card_from_issue(list_id, google_sheet_name):
-    trello_credential = os.environ.get('TRELLO_CREDENTIAL')
-    gcp_credential = os.environ.get('GCP_CREDENTIAL')
+    trello_credential = json.loads(os.environ.get('TRELLO_CREDENTIAL'))
+    gcp_credential = json.loads(os.environ.get('GCP_CREDENTIAL'))
     with open(os.environ.get('GITHUB_EVENT_PATH')) as f:
         issue = json.load(f)['issue']
     data = create_card(list_id, issue['title'], issue['body'], credential=trello_credential)
