@@ -14,4 +14,5 @@ jobs:
         TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
       with:
         list-id: 606bc4f57b8ab34aa24a9a17
-        issue: ${{ github.event.issue }}
+        issue: |
+          ${{ github.event.issue }}
