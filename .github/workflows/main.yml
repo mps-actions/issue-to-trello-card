@@ -10,3 +10,5 @@ jobs:
     - name: Hello action.
       id: hello
       uses: mps-actions/issue-to-trello-card@main
+      env:
+        SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo Hello.
+echo $SAMPLE_SECRET
