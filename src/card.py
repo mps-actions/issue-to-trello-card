@@ -27,7 +27,7 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
 def create_card_command(list_id, name, description, member_ids, key, token):
     credentials = {'key': key, 'token': token}
     data = create_card(list_id, name, description, member_ids, credentials)
-    print(data.json())
+    print(data.text)
 
 
 if __name__ == '__main__':
