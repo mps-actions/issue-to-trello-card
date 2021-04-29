@@ -4,8 +4,12 @@ inputs:
   list-id:
     description: 'List ID added the card created.'
     required: true
+  google-sheet-name:
+    description: 'Name of the google sheet storing relationships between cards and issues.'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.list-id }}
+    - ${{ inputs.google-sheet-name }}

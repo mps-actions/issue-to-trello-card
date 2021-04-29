@@ -10,7 +10,8 @@ jobs:
     - name: Create the Trello card from the opened issue.
       uses: mps-actions/issue-to-trello-card@main
       env:
-        TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
-        TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+        TRELLO_CREDENTIAL: ${{ secrets.TRELLO }}
+        GCP_CREDENTIAL: ${{ secrets.TRELLO_TOKEN }}
       with:
         list-id: 606bc4f57b8ab34aa24a9a17
+        google-sheet-name: trello-test-sheet
