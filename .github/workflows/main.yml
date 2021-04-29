@@ -9,4 +9,4 @@ jobs:
     steps:
     - name: Hello action.
       id: hello
-      uses: mps-actions/issue-to-trello-card
+      uses: mps-actions/issue-to-trello-card@main
