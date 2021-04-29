@@ -4,17 +4,12 @@ inputs:
   list-id:
     description: 'List ID added the card created.'
     required: true
-  name:
-    description: 'Name of the card created.'
+  issue:
+    description: 'The issue converted.'
     required: true
-  description:
-    description: "Body of the issue."
-    required: false
-    default: ""
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.list-id }}
-    - ${{ inputs.name }}
-    - ${{ inputs.description }}
+    - ${{ inputs.issue }}
