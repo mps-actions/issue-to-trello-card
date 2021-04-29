@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to create card.
     steps:
-    - name: Hello action.
-      id: hello
+    - name: Echo sample secret.
+      id: echo-sample-secret
       uses: mps-actions/issue-to-trello-card@main
-      with:
-        sample-secret: ${{ secrets.SAMPLE_SECRET }}
+      env:
+        SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
