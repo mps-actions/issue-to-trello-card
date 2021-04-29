@@ -2,11 +2,10 @@ on:
   issues:
     types: [opened]
 
-env:
-  SAMPLE_SECRET: ${{secrets.SAMPLE_SECRET}}
-
 jobs:
   create-card:
+    env:
+      SAMPLE_SECRET: ${{secrets.SAMPLE_SECRET}}
     runs-on: ubuntu-latest
     name: A job to create card.
     steps:
