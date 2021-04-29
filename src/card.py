@@ -41,7 +41,7 @@ def create_card_from_issue(list_id, google_sheet_name):
     except gspread.WorksheetNotFound:
         worksheet = spreadsheet.add_worksheet('issue-tracker', rows=1000, cols=len(columns))
     df = pd.DataFrame(worksheet.get_all_records(), columns=columns)
-    df.append([issue['id'], issue['num'], issue['user']['id'],
+    df.append([issue['id'], issue['number'], issue['user']['id'],
                issue['user']['login'], issue['html_url'],
                card['idList'], card['id'], card['short_url'],
                datetime.utcnow().strftime('%Y-%m-%dT%H%M%S:%fZ'),
