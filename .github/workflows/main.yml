@@ -11,7 +11,7 @@ jobs:
       uses: mps-actions/issue-to-trello-card@main
       env:
         TRELLO_CREDENTIAL: ${{ secrets.TRELLO }}
-        GCP_CREDENTIAL: ${{ secrets.TRELLO_TOKEN }}
+        GCP_CREDENTIAL: ${{ secrets.GCP }}
       with:
         list-id: 606bc4f57b8ab34aa24a9a17
         google-sheet-name: trello-test-sheet
