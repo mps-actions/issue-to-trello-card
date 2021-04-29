@@ -2,5 +2,5 @@
 
 python /code/card.py \
   --list-id="${1}" \
-  --key="${TRELLO_KEY}" \
+  --google-sheet-name="${2}" \
   --token="${TRELLO_TOKEN}"

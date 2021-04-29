@@ -22,8 +22,6 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
 @click.command()
 @click.option('--list-id')
 @click.option('--google-sheet-name')
-@click.option('--key')
-@click.option('--token')
 def create_card_from_issue(list_id, google_sheet_name):
     trello_credential = os.environ.get('TRELLO_CREDENTIAL')
     gcp_credential = os.environ.get('GCP_CREDENTIAL')
