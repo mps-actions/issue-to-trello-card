@@ -19,16 +19,15 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
 
 @click.command()
 @click.option('--list-id')
-@click.option('--name')
-@click.option('--description', default='')
-@click.option('--member-ids', default=[])
+@click.option('--issue')
 @click.option('--key')
 @click.option('--token')
-def create_card_command(list_id, name, description, member_ids, key, token):
-    credentials = {'key': key, 'token': token}
-    data = create_card(list_id, name, description, member_ids, credentials)
-    print(data.text)
+def create_card_from_issue(list_id, issue, key, token):
+    # credentials = {'key': key, 'token': token}
+    # data = create_card(list_id, name, description, member_ids, credentials)
+    # print(data.text)
+    print(issue)
 
 
 if __name__ == '__main__':
-    create_card_command()
+    create_card_from_issue()
