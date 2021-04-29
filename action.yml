@@ -1,0 +1,5 @@
+name: 'Github issue to Trello card'
+description: 'Convert a github issue to a trello card when the issue is created.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
