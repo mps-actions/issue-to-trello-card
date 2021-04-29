@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo ${SAMPLE_SECRET}
+echo The sample secret is ${INPUT_SAMPLE_SECRET}
