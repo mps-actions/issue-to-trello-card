@@ -44,7 +44,6 @@ def create_card_from_issue(list_id, google_sheet_name):
                   issue['html_url'], card['idList'], card['id'], card['shortUrl'],
                   datetime.utcnow().strftime('%Y-%m-%dT%H%M%S:%fZ'), card['name']]
     df = df.append({key: value for key, value in zip(columns, row_values)}, ignore_index=True)
-    print(df)
     worksheet.update([df.columns.values.tolist(), ] + df.values.tolist())
 
 
