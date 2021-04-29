@@ -29,7 +29,7 @@ def create_card_from_issue(list_id, google_sheet_name):
         issue = json.load(f)['issue']
     data = create_card(list_id, issue['title'], issue['body'], credential=trello_credential)
     print(data.text)
-    print(issue)
+    print(json.dumps(issue, indent=True))
 
 
 if __name__ == '__main__':
