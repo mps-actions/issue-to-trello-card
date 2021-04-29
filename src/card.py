@@ -1,5 +1,5 @@
+import os
 import json
-
 import click
 import requests
 
@@ -19,15 +19,15 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
 
 @click.command()
 @click.option('--list-id')
-@click.option('--issue')
 @click.option('--key')
 @click.option('--token')
-def create_card_from_issue(list_id, issue, key, token):
+def create_card_from_issue(list_id, key, token):
     # credentials = {'key': key, 'token': token}
     # data = create_card(list_id, name, description, member_ids, credentials)
     # print(data.text)
-    print(issue)
-
+    with open(os.environ.get('GITHUB_EVENT_PATH')) as f:
+        event = json.load(f)
+    print(event)
 
 if __name__ == '__main__':
     create_card_from_issue()
