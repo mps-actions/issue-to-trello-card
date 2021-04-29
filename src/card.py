@@ -43,7 +43,7 @@ def create_card_from_issue(list_id, google_sheet_name):
     df = pd.DataFrame(worksheet.get_all_records(), columns=columns)
     df.append([issue['id'], issue['number'], issue['user']['id'],
                issue['user']['login'], issue['html_url'],
-               card['idList'], card['id'], card['short_url'],
+               card['idList'], card['id'], card['shortUrl'],
                datetime.utcnow().strftime('%Y-%m-%dT%H%M%S:%fZ'),
                card['name']])
     worksheet.update([df.columns.values.tolist(), ] + df.values.tolist())
