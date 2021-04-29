@@ -17,7 +17,7 @@ def create_card(list_id, name, description='', member_ids=[], credential={}):
     return requests.post(url, params=query)
 
 
-@click.command
+@click.command()
 @click.option('--list-id')
 @click.option('--name')
 @click.option('--description', default='')
