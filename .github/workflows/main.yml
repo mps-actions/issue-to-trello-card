@@ -4,11 +4,11 @@ on:
 
 jobs:
   create-card:
-    env:
-      SAMPLE_SECRET: ${{secrets.SAMPLE_SECRET}}
     runs-on: ubuntu-latest
     name: A job to create card.
     steps:
     - name: Echo sample secret.
       id: echo-sample-secret
       uses: mps-actions/issue-to-trello-card@main
+      with:
+        SAMPLE_SECRET: ${{secrets.SAMPLE_SECRET}}
