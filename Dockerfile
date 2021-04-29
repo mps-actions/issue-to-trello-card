@@ -5,8 +5,8 @@ RUN apt-get update && \
 
 RUN pip install requests click
 
-# COPY ./src /code
-# WORKDIR /code
+COPY ./src /code
+WORKDIR /code
 
 COPY entrypoint.sh /entrypoint.sh
 

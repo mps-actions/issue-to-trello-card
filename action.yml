@@ -1,9 +1,15 @@
 name: 'Github issue to Trello card'
 description: 'Convert a github issue to a trello card when the issue is created.'
 inputs:
-  SAMPLE_SECRET:
-    description: 'The sample secret stored on Github.'
+  list-id:
+    description: 'List ID added the card created.'
+    required: true
+  name:
+    description: 'Name of the card created.'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.list-id }}
+    - ${{ inputs.name }}

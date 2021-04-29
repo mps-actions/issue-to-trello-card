@@ -7,8 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to create card.
     steps:
-    - name: Echo sample secret.
-      id: echo-sample-secret
+    - name: Create the Trello card from the opened issue.
       uses: mps-actions/issue-to-trello-card@main
       env:
-        SAMPLE_SECRET: ${{secrets.SAMPLE_SECRET}}
+        TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+        TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+      with:
+        list-id: 606bc4f57b8ab34aa24a9a17
+        name: ${{ github.event.issue.title}}
