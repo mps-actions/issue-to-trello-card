@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo $SAMPLE_SECRET
+echo $1
