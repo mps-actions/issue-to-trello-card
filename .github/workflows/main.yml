@@ -1,0 +1,12 @@
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-card:
+    runs-on: ubuntu-latest
+    name: A job to create card.
+    steps:
+    - name: Hello action.
+      id: hello
+      uses: mps-actions/issue-to-trello-card@v1
